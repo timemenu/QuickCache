@@ -34,7 +34,7 @@ public class QuickCacheGenerator {
 
     public QuickCache createMemoryCache(String cacheName, int maxSize) {
         synchronized (cacheHashMap) {
-            QuickCache cache = new MemoryImageCache(1000);
+            QuickCache cache = new MemoryImageCache(maxSize);
             try {
                 cacheHashMap.put(cacheName, cache);
             } catch (Exception e) {

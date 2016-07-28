@@ -69,7 +69,7 @@ public class DiskImageCache implements QuickCache {
                 mCompressQuality = 50;
                 break;
             default :
-                mCompressFormat = Bitmap.CompressFormat.PNG;
+                mCompressQuality = 70;
                 break;
         }
     }

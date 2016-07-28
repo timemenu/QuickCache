@@ -56,12 +56,12 @@ public class QuickCacheGenerator {
         }
     }
 
-    public QuickCache createCainCache(Context context, String cacheName, int maxSize) {
+    public QuickCache createCainCache(Context context, String cacheName, int maxSize, int format, int quality) {
         synchronized (cacheHashMap) {
             checkAlreadyExists(cacheName);
             List<QuickCache> chain = new ArrayList<QuickCache>();
             chain.add(new MemoryImageCache(maxSize));
-            chain.add(new DiskImageCache(context, cacheName, maxSize, QuickConstant.FILE_FORMAT_JPG, QuickConstant.FILE_QUALITY_MIDDLE));
+            chain.add(new DiskImageCache(context, cacheName, maxSize, format, quality));
             ChainImageCache cache = new ChainImageCache(chain);
             cacheHashMap.put(cacheName, cache);
             return cache;

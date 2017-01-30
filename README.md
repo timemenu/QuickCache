@@ -2,19 +2,19 @@
 android image cache library<br/>
 <br/>
 인터페이스 QuickCache<br/>
-* putBitmap(key(String), bitmap(Bitmap))<br/>
-* putBitmap(key(String), file(File))<br/>
-* getBitmap(key(String))<br/>
-* clear()<br/>
-<br/>
+* putBitmap(key(String), bitmap(Bitmap))
+* putBitmap(key(String), file(File))
+* getBitmap(key(String))
+* clear()
+
 ### 1.onCreate 등 초기화 부분<br/>
-1). 메모리캐시<br/>
+ 1. 메모리캐시<br/>
 QuickCacheGenerator.getInstance().createMemoryCache(cacheName, cacheSize);<br/>
-2). 디스크캐시<br/>
+ 2. 디스크캐시<br/>
 QuickCacheGenerator.getInstance().createDiskCache(context, cacheName, cacheSize);<br/>
-3). 체인캐시(컨텍스트, 캐시이름, 캐시사이즈, 포맷, 품질)<br/>
+ 3. 체인캐시(컨텍스트, 캐시이름, 캐시사이즈, 포맷, 품질)<br/>
 QuickCacheGenerator.getInstance().createCainCache(context, cacheName, cacheSize, format, quality);<br/>
-<br/>
+
 ### 2.이미지 캐시 사용 부분<br/>
 QuickCache quickCache = QuickCacheGenerator.getInstance().getCache(cacheName);<br/>
 Bitmap bitmap = quickCache.getBitmap(key);<br/>

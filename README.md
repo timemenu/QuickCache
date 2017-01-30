@@ -8,18 +8,18 @@ android image cache library
 * clear()
 
 -- onCreate 등 초기화 부분
-
-// 2레벨 캐시(이미지 파일 캐시)를 사용하려면 동일 이름의 파일 캐시를 생성해 주어야 한다.
-DiskCacheFactory.getInstance().create(cacheName, cacheSize, format, quality);
-// 이미지 캐시 초기화
-ImageCacheFactory.getInstance().createTwoLevelCache(cacheName, memoryImageMaxCounts);
+1. 메모리캐시
+QuickCacheGenerator.getInstance().createMemoryCache(cacheName, cacheSize);
+2. 디스크캐시
+QuickCacheGenerator.getInstance().createDiskCache(context, cacheName, cacheSize);
+3. 체인캐시(컨텍스트, 캐시이름, 캐시사이즈, 포맷, 품질)
+QuickCacheGenerator.getInstance().createCainCache(context, cacheName, cacheSize, format, quality);
 
 -- 이미지 캐시 사용 부분
-ImageCache imageCache = ImageCacheFactory.getInstance().getCache(cacheName);
-Bitmap bitmap = imageCache.getBitmap(key);
+QuickCache quickCache = QuickCacheGenerator.getInstance().getCache(cacheName);
+Bitmap bitmap = quickCache.getBitmap(key);
 if (bitmap != null) {
 	imageView.set.....
 }
-
 -- 이미지 캐시 추가 부분
-imageCache.putBitmap(key, someBitmap);
+quickCache.putBitmap(key, someBitmap);

@@ -56,7 +56,7 @@ public class QuickCacheGenerator {
         }
     }
 
-    public QuickCache createCainCache(Context context, String cacheName, int maxSize, int format, int quality) {
+    public QuickCache createChainCache(Context context, String cacheName, int maxSize, int format, int quality) {
         synchronized (cacheHashMap) {
             checkAlreadyExists(cacheName);
             List<QuickCache> chain = new ArrayList<QuickCache>();

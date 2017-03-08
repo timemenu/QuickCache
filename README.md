@@ -17,7 +17,7 @@ QuickCacheGenerator.getInstance().createMemoryCache(cacheName, cacheSize);<br/>
  2. 디스크캐시<br/>
 QuickCacheGenerator.getInstance().createDiskCache(context, cacheName, cacheSize);<br/>
  3. 체인캐시(컨텍스트, 캐시이름, 캐시사이즈, 포맷, 품질)<br/>
-QuickCacheGenerator.getInstance().createCainCache(context, cacheName, cacheSize, format, quality);
+QuickCacheGenerator.getInstance().createChainCache(context, cacheName, cacheSize, format, quality);
 
 ___
 
